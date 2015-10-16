@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}R-UiKit{% endblock %}</title>
+        {% stylesheets '@RUiKitBundle/Resources/assets/uikit.less' filter='less,cssrewrite'
+        output='css/uikit.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        <!-- include font-awesome because assetic seems to not rewrite font
+        pathes -->
+        <!-- also you can use 'fa' classes instead of uk-icon -->
+        <link
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+        rel="stylesheet"
+        integrity="sha256-k2/8zcNbxVIh5mnQ52A0r3a6jAgMGxFJFE2707UxGCk=
+        sha512-ZV9KawG2Legkwp3nAlxLIVFudTauWuBpC10uEafMHYL0Sarrz5A7G79kXh5+5+woxQ5HM559XX2UZjMJ36Wplg=="
+        crossorigin="anonymous">
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block fos_user_content %}{% endblock %}
+        {% block body %}{% endblock %}
+        {% javascripts
+            '@RUiKitBundle/Resources/assets/vendor/uikit/js/uikit.min.js'
+            '@RUiKitBundle/Resources/assets/vendor/uikit/js/core/*.min.js'
+            '@RUiKitBundle/Resources/assets/vendor/uikit/js/components/*.min.js'
+            output='js/uikit.js' %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

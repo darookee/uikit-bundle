@@ -1,0 +1,20 @@
+{
+    "name": "r/uikit-bundle",
+    "description": "Use UiKit in Symfony",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nils Uliczka",
+            "email": "nils.uliczka@darookee.net"
+        }
+    ],
+    "require": {},
+    "scripts": {
+        "post-install-cmd": [
+            "bower install"
+        ],
+        "post-update-cmd": [
+            "bower install"
+        ]
+    }
+}
