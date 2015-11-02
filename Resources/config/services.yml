@@ -1,4 +1,7 @@
 services:
-#    r_ui_kit.example:
-#        class: R\UiKitBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    r_uikit.twig_extension.datepattern:
+        class: R\UiKitBundle\Twig\DateformatExtension
+        arguments:
+            - @twig
+        tags:
+            - { name: twig.extension }
