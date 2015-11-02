@@ -1,3 +1,0 @@
-r_ui_kit_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: RUiKitBundle:Default:index }
