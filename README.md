@@ -1,11 +1,6 @@
 # RUiKitBundle
 
-Use UiKit in Symfony
-
-## Dependencies
-
-- bower
-- Assetic with the less filter enabled
+Use UiKit-Forms in Symfony2
 
 ## Installation
 
@@ -40,7 +35,31 @@ class AppKernel extends Kernel
 }
 ```
 
-Additionally you have to enable the less filter in your Assetic configuration.
+After that you have to let twig know about the form template
 
-If composer did not run ```bower install``` after installing the bundle please
-run it manually in the module path to install uikit.
+```yaml
+# ...
+twig:
+    # ...
+    form:
+        resources:
+            - 'RUiKitBundle::uikit-form.html.twig'
+# ...
+```
+
+You have to include the UiKit Stylesheets and JavaScripts for yourself.
+Essentially you also just could download the uikit-form.html.twig and use it
+witout installing this bundle, note that you have to chnage the date and time
+widgets to not use the `localizeddateformat` function and supply you own format
+for the uikit-date- and -timepicker.
+
+The UiKit Components you need to include at least are these
+
+- form-select
+- form-password
+- form-file
+- form-advanced
+- placeholder
+- autocomplete
+- datepicker
+- timepicker
